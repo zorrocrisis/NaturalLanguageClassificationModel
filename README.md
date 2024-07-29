@@ -88,7 +88,7 @@ For the ML models, the "default" **TF-IDF + SVM pipeline achieved the highest ac
 </p>
 
 <p align="right">
-  <img src="https://github.com/user-attachments/assets/2910884e-c4c4-491f-b3ee-ea726ab217de"/>
+  <img height=300 src="https://github.com/user-attachments/assets/2910884e-c4c4-491f-b3ee-ea726ab217de"/>
 </p>
 
 <p align="center">
