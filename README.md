@@ -88,9 +88,8 @@ For the ML models, the "default" **TF-IDF + SVM pipeline achieved the highest ac
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4d96f7b6-2e10-4744-a9b8-efdb6be9cfdf"/>
+  <img src="https://github.com/user-attachments/assets/04217463-7f6a-456e-b1d2-d43ca94087c2"/>
 </p>
-
 
 <p align="center">
   <i>Figure 3: Fine-tuned TF-IDF + SVM (best version) - accuracy per label</i>
