@@ -26,7 +26,7 @@ To address the task of **classifying hotel reviews which were labeled with regar
 
 More specifically, **five implementations** were developed. The **first contains and runs a diverse set of machine learning models to identify a clear baseline to improve upon**. The **second implementation proceeds to fine-tune the best model from the previous implementation**. The **third generates the final labels for the test run with the best achieved model**. The **fourth and fifth implementations contain and run deep learning models**.
 
-### **Machine Learning Models**
+## **Machine Learning Models**
 Multiple machine learning (ML) classifiers were implemented, namely:
 
 - **Multinomial Naïve Bayes (MNB)**
@@ -47,7 +47,7 @@ Regarding **stop word removal**, various options were also analysed in detail si
 Pipelines were originated for each classifier, continuining the classification process after the preprocessing. These pipelines were formed by two major components: a **vectorizer** (TF-IDF vectorizer was usually utilised), which converts textual data into a numerical format, and the **classifier itself** (SVM, SGD, LR, and so on).
 
 
-### **Deep Learning Models**
+## **Deep Learning Models**
 Two deep learning (DL) approaches were additionally considered:
 
 - **Temporal Convolutional Network (TCN)**, using two different word embedding modes: a static word embedding using pre-trained Word2Vec mode and a random mode
