@@ -8,7 +8,22 @@ This project, originally an evaluation component for the Natural Language course
 The following document indicates how to access and utilise the source code. It also contains a brief analysis of the implementation and results, referring to the [official report](https://github.com/zorrocrisis/NaturalLanguageClassificationModel/blob/main/FinalReport.pdf) for more detailed information.
 
 ## **Quick Start**
-The project's source files can be downloaded from this repository. To open the program using Unity (v.2021.3.10f1), simply clone the repository and open the project utilising Unity Hub.
+This project's source files can be downloaded from this repository. They are divided into the following main files:
+- ***reviews.py*** - contains the best final classification model, training it on the training set (*train.txt*) to classify the test set (*test_just_reviews.txt*) and producing a list of labels/classifications (*results.txt*).
+- ***train_multiple_models.py*** - trains and tests the implemented machine learning classification models.
+- ***fine_tuning.py*** - fine-tunes the machine learning classification models.
+- ***bert.py*** and ***tcn_models.py*** - contains the deep learning classification models.
+
+To run this poject, follow these steps:
+1. Install the necessary dependencies:
+     - pip install pandas
+     - pip install nltk
+     - pip install scikit-learn
+  
+2. Simply run whatever file you would like utilising a terminal. As an example:
+     - python reviews.py
+  
+Feel free to change the test and training sets, as well as any other parameters you see fit.
 
 ## **Task Introduction**
 - The **training set** (*train.txt*), supplied at the start of the poject, **contains multiple hotel reviews with the corresponding (correct) labels**. An example of these reviews can be found here:
@@ -24,7 +39,7 @@ The project's source files can be downloaded from this repository. To open the p
 ## **Implementations**
 To address the task of **classifying hotel reviews which were labeled with regards to truthfulness and polarity**, resulting in **four possible labels** (TRUTHFULPOSITIVE, TRUTHFULNEGATIVE, DECEPTIVEPOSITIVE and DECEPTIVENEGATIVE), multiple models were developed in Python3.
 
-More specifically, **five implementations** were developed. The **first contains and runs a diverse set of machine learning models to identify a clear baseline to improve upon**. The **second implementation proceeds to fine-tune the best model from the previous implementation**. The **third generates the final labels for the test run with the best achieved model**. The **fourth and fifth implementations contain and run deep learning models**.
+More specifically, **five implementations** were developed. The **first (*train_multiple_models.py*) contains and runs a diverse set of machine learning models to identify a clear baseline to improve upon**. The **second implementation (*fine_tuning.py*) proceeds to fine-tune the best model from the previous implementation**. The **third (*reviews.py*) generates the final labels for the test run with the best achieved model**. The **fourth and fifth implementations (*bert.py* and *tcn_models.py*) contain and run deep learning models**.
 
 ## **Machine Learning Models**
 Multiple machine learning (ML) classifiers were implemented, namely:
