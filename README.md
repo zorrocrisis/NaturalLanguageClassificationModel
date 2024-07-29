@@ -24,7 +24,7 @@ The project's source files can be downloaded from this repository. To open the p
 ## **Implemented Models**
 To address the task of **classifying hotel reviews which were labeled with regards to truthfulness and polarity**, resulting in **four possible labels** (TRUTHFULPOSITIVE, TRUTHFULNEGATIVE, DECEPTIVEPOSITIVE and DECEPTIVENEGATIVE), multiple models were developed in Python3, being further detailed in the following sections.
 
-## ***Machine Learning Models***
+### **Machine Learning Models**
 
 Multiple Machine Learning (ML) classifier model were applied:
 Multinomial Naïve Bayes (MNB), Logistic Regression (LR), Support
