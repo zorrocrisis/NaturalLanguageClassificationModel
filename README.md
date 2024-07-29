@@ -13,9 +13,7 @@ The project's source files can be downloaded from this repository. To open the p
 ## **Introduction**
 The training set (*train.txt*), given at the start of the poject, contains multiple hotel reviews with the corresponding labels (or classifications):
 
-<p align="center">
-  <i>*TRUTHFUL-POSITIVE The sheraton was a wonderful hotel! When me and my mom flew in we were really tired so we decided to take a quick nap. We didnt want to get up! The beds are absolutely to die for. I wanted to take it home with me. The service was great and this was probably one of the biggest if not the biggest hotel ive ever stayed in. They had a really nice restaurant inside with excellent food.</i>
-</p>
+*TRUTHFUL-POSITIVE The sheraton was a wonderful hotel! When me and my mom flew in we were really tired so we decided to take a quick nap. We didnt want to get up! The beds are absolutely to die for. I wanted to take it home with me. The service was great and this was probably one of the biggest if not the biggest hotel ive ever stayed in. They had a really nice restaurant inside with excellent food.*
 
 You will also be given a test set (test_just_reviews.txt) in which each line has the format (no labels): 
 
