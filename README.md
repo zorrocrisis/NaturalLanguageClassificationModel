@@ -21,7 +21,7 @@ The project's source files can be downloaded from this repository. To open the p
 
 - For the **automatic evaluation of the project, the best obtained model should be run on the supplied test set, returning an output file (named *results.txt*), in which each line contains both the predicted label and the corresponding review**. The line number in which the review appears in the test file has to be the same line number of the corresponding label in the *results.txt* (the automatic evaluation depended on this).
 
-## **Implemented Models**
+## **Implementations**
 To address the task of **classifying hotel reviews which were labeled with regards to truthfulness and polarity**, resulting in **four possible labels** (TRUTHFULPOSITIVE, TRUTHFULNEGATIVE, DECEPTIVEPOSITIVE and DECEPTIVENEGATIVE), multiple models were developed in Python3.
 
 More specifically, **five implementations** were developed. The **first contains and runs a diverse set of machine learning models to identify a clear baseline to improve upon**. The **second implementation proceeds to fine-tune the best model from the previous implementation**. The **third generates the final labels for the test run with the best achieved model**. The **fourth and fifth implementations contain and run deep learning models**.
