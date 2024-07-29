@@ -19,6 +19,9 @@ To run this poject, follow these steps:
      - pip install pandas
      - pip install nltk
      - pip install scikit-learn
+     - pip install matplotlib
+     - pip install torch
+     - pip install numpy
   
 2. Simply run whatever file you would like utilising a terminal. As an example:
      - python reviews.py
