@@ -10,36 +10,22 @@ The following document indicates how to access and utilise the source code. It a
 ## **Quick Start**
 The project's source files can be downloaded from this repository. To open the program using Unity (v.2021.3.10f1), simply clone the repository and open the project utilising Unity Hub.
 
-## **Introduction**
-The training set (*train.txt*), given at the start of the poject, contains multiple hotel reviews with the corresponding labels (or classifications):
+## **Task Introduction**
+- The **training set** (*train.txt*), supplied at the start of the poject, **contains multiple hotel reviews with the corresponding (correct) labels**. An example of these reviews can be found here:
 
 *TRUTHFUL-POSITIVE The sheraton was a wonderful hotel! When me and my mom flew in we were really tired so we decided to take a quick nap. We didnt want to get up! The beds are absolutely to die for. I wanted to take it home with me. The service was great and this was probably one of the biggest if not the biggest hotel ive ever stayed in. They had a really nice restaurant inside with excellent food.*
 
-You will also be given a test set (test_just_reviews.txt) in which each line has the format (no labels): 
+- A **test set** (*test_just_reviews.txt*) was also supplied at the start of this project. However, unlike the training set, the test set **contains only a review per line, without the respective (correct) labels**. An example of these reviews can be found here:
 
-TRUTHFUL-POSITIVE The sheraton was a wonderful hotel! When me and my mom flew in we were
-really tired so we decided to take a quick nap. We didnt want to get up! The beds are absolutely to die
-for. I wanted to take it home with me. The service was great and this was probably one of the biggest if
-not the biggest hotel ive ever stayed in. They had a really nice restaurant inside with excellent food.
-You will also be given a test set (test_just_reviews.txt) in which each line has the format (no labels):
-review
+*My family and I stayed here while we were visiting Chicago. This was a perfect location to many of the things we wanted to do and was easy to get around. It was in a safe neighborhood and was great accomodations. The staff was friendly and went the "extra mile" to make sure we had everything we needed. The beds were comfortable. We would definitely stay here again.*
 
-During the development of your project, you should create your own test(s) set(s) to evaluate your
-models. In the paper you should report the results on your own test(s) set(s). However, for the
-automatic evaluation of your project, you should run your best model on the given test set (notice that
-it has no labels – test_just_reviews.txt) and return an output file (named results.txt), in which each line
-has the format:
-labelNotice that the line number in which the review appears in the test file should be the same line
-number of the corresponding label in the results.txt (the automatic evaluation depends on this).
-To build your model(s), you can use whatever you want, including taking advantage of code already
-available (and we strongly advise you to do so), as long as you identify the source. The only constraint
-is: you should implement your model in Python 3.
-
-To address the task of classifying hotel reviews which were labeled
-with regards to truthfulness (TRUTHFUL vs. DECEPTIVE) and polarity (POSITIVE vs. NEGATIVE), resulting in four possible labels
-(TRUTHFULPOSITIVE, TRUTHFULNEGATIVE, DECEPTIVEPOSITIVE and DECEPTIVENEGATIVE), multiple models were developed in Python, being further explored in the following sections.
+- For the **automatic evaluation of the project, the best obtained model should be run on the supplied test set, returning an output file (named *results.txt*), in which each line contains both the predicted label and the corresponding review**. The line number in which the review appears in the test file has to be the same line number of the corresponding label in the *results.txt* (the automatic evaluation depended on this).
 
 ## **Implemented Models**
+To address the task of **classifying hotel reviews which were labeled with regards to truthfulness and polarity**, resulting in **four possible labels** (TRUTHFULPOSITIVE, TRUTHFULNEGATIVE, DECEPTIVEPOSITIVE and DECEPTIVENEGATIVE), multiple models were developed in Python3, being further detailed in the following sections.
+
+## ***Machine Learning Models***
+
 Multiple Machine Learning (ML) classifier model were applied:
 Multinomial Naïve Bayes (MNB), Logistic Regression (LR), Support
 Vector Machine (SVM) and Stochastic Gradient Descent (SGD). The
