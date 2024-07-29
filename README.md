@@ -22,25 +22,22 @@ The project's source files can be downloaded from this repository. To open the p
 - For the **automatic evaluation of the project, the best obtained model should be run on the supplied test set, returning an output file (named *results.txt*), in which each line contains both the predicted label and the corresponding review**. The line number in which the review appears in the test file has to be the same line number of the corresponding label in the *results.txt* (the automatic evaluation depended on this).
 
 ## **Implemented Models**
-To address the task of **classifying hotel reviews which were labeled with regards to truthfulness and polarity**, resulting in **four possible labels** (TRUTHFULPOSITIVE, TRUTHFULNEGATIVE, DECEPTIVEPOSITIVE and DECEPTIVENEGATIVE), multiple models were developed in Python3, being further detailed in the following sections.
+To address the task of **classifying hotel reviews which were labeled with regards to truthfulness and polarity**, resulting in **four possible labels** (TRUTHFULPOSITIVE, TRUTHFULNEGATIVE, DECEPTIVEPOSITIVE and DECEPTIVENEGATIVE), multiple models were developed in Python3.
+
+More specifically, **five implementations** were developed. The **first contains and runs a diverse set of machine learning models to identify a clear baseline to improve upon**. The **second implementation proceeds to fine-tune the best model from the previous implementation**. The **third generates the final labels for the test run with the best achieved model**. The **fourth and fifth implementations contain and run deep learning models**.
 
 ### **Machine Learning Models**
+Multiple machine learning (ML) classifiers were implemented, namely:
 
-Multiple Machine Learning (ML) classifier model were applied:
-Multinomial Naïve Bayes (MNB), Logistic Regression (LR), Support
-Vector Machine (SVM) and Stochastic Gradient Descent (SGD). The
-general pipeline for these models included data preprocessing, vectorization, training and evaluation. Moreover, two Deep Learning
-(DL) approaches were also considered: Temporal Convolutional
-Network (TCN) using two different word embedding modes - a
-static word embedding using pre-trained Word2Vec mode and a
-random mode; and Bidirectional Enconder Representations from
-Transformers (BERT). More specifically, five implementations
-were developed. The first contains and runs all the mentioned ML
-models to identify a clear baseline to improve upon. The second
-proceeds to fine-tune the best model from the first implementation.
-The third implementation generates the final labels for the test run
-with the best achieved model. The fourth and fifth contain and run
-the DL models.
+- **Multinomial Naïve Bayes (MNB)**
+- **Logistic Regression (LR)**
+- **Support Vector Machine (SVM)**
+- **Stochastic Gradient Descent (SGD)**
+
+The general pipeline for these models included **data preprocessing, vectorization, training and evaluation**.
+
+#### Preprocessing
+
 2.1 Machine Learning
 2.1.1 Preprocessing. The preprocessing was inspired by multiple applications found online (why reinvent the wheel?), involving
 word tokenization, stop word removal, stemming and detokenization [1]. In the first implementation the NLTK’s word tokenizer
@@ -54,9 +51,6 @@ text classification task. After examining the default stop words pertaining to s
 was made to edit these lists [6] [3]. Considering one of the goals
 is to determine the polarity of the reviews, we opted to exclude
 from the stop words “fingerprints” belonging to a communication
-NL Project 2, IST, 2023, Lisbon, Portugal
-© 2023 Association for Computing Machinery.
-https://doi.org/
 concept entitled negative language [4]. This type of communication, often used when a person is plagued with negative emotions,
 is characterised by sentences in the negative form (e.g.: “I don’t
 recommend. . .”) or passive-aggressive expressions (e.g.: “Sure, it
@@ -68,6 +62,17 @@ each classifier, being formed by two components: a vectorizer (we
 mostly utilized the TF-IDF vectorizer), which converts textual data
 into a numerical format, and the classifier itself (SVM, SGD, LR,
 and so on)[6].
+
+
+
+
+
+### **Deep Learning Models**
+Two deep learning (DL) approaches were considered:
+
+- **Temporal Convolutional Network (TCN)**, using two different word embedding modes: a static word embedding using pre-trained Word2Vec mode and a random mode
+- **Bidirectional Enconder Representations from Transformers (BERT)**
+
 2.2 Deep Learning
 2.2.1 Preprocessing. For preprocessing data in DL, we found
 that just using a tokenizer was enough, as it did minimal text cleaning as to not damage each model’s ability to learn [7][2]. For TCN,
