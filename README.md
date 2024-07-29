@@ -68,7 +68,7 @@ To evaluate the models’ performances, **accuracy was highlighted as the primar
 
 With regards to parameters, on the first implementation only the default values were applied to the global pipeline (for more information, refer to the full report). On the second implementation, **a grid search was performed on a set of defined parameters to fine-tune and improve the overall accuracy of the model which had displayed the best performance so far**. In the realm of DL models, no extensive parameter exploration was conducted. Consequently, the models were evaluated using their default parameters as provided in the original implementations (for more information, refer to the full report).
 
-For the ML models, the "default" **TF-IDF + SVM pipeline achieved the highest accuracy at 81.36% on the first implementation**. Subsequently, TF-IDF + SVM was chosen to be further analysed - Figure 1 illustrates the impact of different stop words on both the default and a fine-tuned version of the model. Notably, **the fine-tuned TF-IDF + SVM without stop words outperformed all others variations of this model, achieving an average score of 85.50%** - Figure 2.
+For the ML models, the "default" **TF-IDF + SVM pipeline achieved the highest accuracy at 81.36% on the first implementation**. Subsequently, TF-IDF + SVM was chosen to be further analysed - Figure 1 illustrates the impact of different stop words on both the default and a fine-tuned version of the model. Notably, **the fine-tuned TF-IDF + SVM without stop words outperformed all others variations of this model, achieving an average score of 85.50%** - Figure 2 and 3.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/4ca849cb-3aeb-4a5b-87f2-77e87e3a789b"/>
@@ -85,61 +85,39 @@ For the ML models, the "default" **TF-IDF + SVM pipeline achieved the highest ac
 </p>
 
 <p align="center">
-  <i>Figure 2: Fine-tuned TF-IDF + SVM (best version) - confusion matrix and accuracy per label</i>
+  <i>Figure 2: Fine-tuned TF-IDF + SVM (best version) - confusion matrix</i>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/31ed7a90-0998-426a-b02f-9dc82c3811f0"/>
+</p>
+
+<p align="center">
+  <i>Figure 3: Fine-tuned TF-IDF + SVM (best version) - accuracy per label</i>
 </p>
 
 Considering the DL models: **TCN embedding random achieved 69%, TCN Word2Vec static reached 71.17%, and the BERT model scored 74%**.
 
 ## **Discussion**
-Regarding the stop words’ analysis (Figure 1), despite one verifying
-mostly positive variations on the average accuracy with the edited
-lists (especially regarding NLTK: 81.36% to 81.71% and 83.79% to
-84.14%), considering the standard deviation identified, one cannot confirm nor deny the impact of eliminating "negative
-communication" from the stop words. This result can, however,
-be influenced by the biaxial nature of this classification task: aside
-from determining polarity, we also had to consider truthfulness,
-whose correlation to negative language remains unexplored.
-Figure 2’s confusion matrix showcases how the fine-tuned
-model is greatly accurate in polarity classification, with the
-most frequent errors in all labels corresponding to mislabelling on the truthfulness scale - TRUTHFULPOSITIVE is most
-often mistaken for DECEPTIVEPOSITIVE, TRUTHFULNEGATIVE
-is most frequently mistaken for DECEPTIVENEGATIVE and so on.
-A good example of this is review 690 which, due to its unusual
-punctuation and structure (e.g.: ",this is a very good place.amazing")
-often induces the model to mistake it for DECEPTIVE when it is
-TRUTHFUL. Contrarily, when the predicted polarity is incorrect its
-often due to a review containing a mixture of good and bad adjectives (e.g.: review 887) or a review whose classification contradicts
-its content (e.g.: review 1237 contains "Will definitely stay there
-again!" yet is classified as negative).
-Nonetheless, the final model, which outperformed all other
-models - fine-tuned TF-IDF + SVM without stop word removal
-- managed to achieve a satisfactory 91% accuracy per labels (Figure
-2)! The underperforming of the DL models is possibly due to their
-large size and small data set, which poses an overfitting risk. ML
-models allowed for quick and convenient parameter tuning while
-DL models were time-consuming and computationally expensive,
-making parameter exploration challenging.
+Regarding the **stop words’ analysis** (Figure 1), despite one verifying mostly positive variations on the average accuracy with the edited lists, **considering the standard deviation identified, one cannot confirm nor deny the impact of eliminating "negative communication" from the stop words**. This result can, however, be influenced by the **biaxial nature of this classification task**: aside from determining polarity, the models also had to consider truthfulness, whose correlation to negative language remains unexplored.
 
+Figure 2’s confusion matrix showcases how **the fine-tuned model is greatly accurate in polarity classification**, with the most frequent errors in all labels corresponding to mislabelling on the truthfulness scale - TRUTHFULPOSITIVE is most often mistaken for DECEPTIVEPOSITIVE, TRUTHFULNEGATIVE is most frequently mistaken for DECEPTIVENEGATIVE and so on. A good example of this is review 690 which, due to its unusual punctuation and structure (e.g.: ",this is a very good place.amazing") often induces the model to mistake it for DECEPTIVE when it is TRUTHFUL. Contrarily, when the predicted polarity is incorrect its often due to a review containing a mixture of good and bad adjectives (e.g.: review 887) or a review whose classification contradicts its content (e.g.: review 1237 contains "Will definitely stay there again!" yet is classified as negative).
+
+Nonetheless, the final model, which outperformed all other models - **fine-tuned TF-IDF + SVM without stop word removal** - **managed to achieve a satisfactory 91% accuracy per labels** (Figure
+3)!
+
+The **underperforming of the DL models** is possibly due to their large size and small data set, which poses an **overfitting risk**.
+
+ML models allowed for quick and convenient parameter tuning while DL models were time-consuming and computationally expensive, making parameter exploration more challenging.
 
 ## **Future Work**
-5 FUTURE WORK
-To gain deeper insights into the influence of stop words associated
-with negative language [4], a specialized investigation focused on
-their impact solely regarding polarity classification could be conducted. Furthermore, future research endeavors could concentrate
-on refining our DL approaches, expanding the dataset, or simplifying network architecture by reducing the number of layers and
-their complexity.
+**To gain deeper insights into the influence of stop words associated with negative language, a specialized investigation focused on their impact solely regarding polarity classification could be conducted**. Furthermore, future research endeavors could concentrate on refining our DL approaches, expanding the dataset, or simplifying network architecture by reducing the number of layers and their complexity.
 
+## **Best Model's Official Performance**
+After the best classification model's submission, the automatic evaluation was performed, resulting in a **final obtained accuracy of 89.5%!**
 
-## **Best Model's Final Performance**
-Automatic Evaluation (5 points):
-• Accuracy will be the evaluation measure.
-• If you beat a weak baseline (Jaccard) that results in an accuracy of 58.5% (on test_just_reviews.txt)
-you will have 2.5 points.
-• If you beat a stronger baseline, based on a Support Vector Classifier and a tf-idf that results in an
-accuracy of 88.0% (on test_just_reviews.txt) you will have extra 2.5 points.
-
+This accuracy is slightly higher than the one obtained in testing (81.36%). Among other hypotheses, this could because, for the final submission, the original supplied dataset was entirely utilised to train the model, instead of having it split into a training and development set, thus giving more data for the model to train with.
 
 ## **Authors and Acknowledgements**
-
 This project was developed by **[Miguel Belbute (zorrocrisis)](https://github.com/zorrocrisis)** and [Guilherme Pereira](https://github.com/the-Kob).
 The initial code was supplied by **[Prof. Pedro dos Santos](https://fenix.tecnico.ulisboa.pt/homepage/ist12886)**
