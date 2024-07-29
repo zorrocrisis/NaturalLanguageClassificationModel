@@ -119,4 +119,3 @@ This accuracy is slightly higher than the one obtained in testing (81.36%). Amon
 
 ## **Authors and Acknowledgements**
 This project was developed by **[Miguel Belbute (zorrocrisis)](https://github.com/zorrocrisis)** and [Guilherme Pereira](https://github.com/the-Kob).
-The initial code was supplied by **[Prof. Pedro dos Santos](https://fenix.tecnico.ulisboa.pt/homepage/ist12886)**
