@@ -1,4 +1,4 @@
-## **Text Classification Model**
+## **Text Classification Models**
 This project, originally an evaluation component for the Natural Language course (2023/2024), talking place in Instituto Superior Técnico, University of Lisbon, aimed to **simulate a participation in an evaluation forum** (e.g.: CLEF, SemEval, etc.), in which participants test their systems in specific tasks and in the same test sets. In further detail, this project is about **distinguishing between truthful and deceptive hotel reviews, additionally determining their polarity (positive vs. negative)** - being given a file with a list of N reviews, this system returns another file with N predicted labels (TRUTHFULPOSITIVE, TRUTHFULNEGATIVE, DECEPTIVEPOSITIVE, or DECEPTIVENEGATIVE).
 
 <p align="center">
